@@ -136,13 +136,14 @@ const SectionBack = styled(motion.section)`
 		height: 8vh;
 		display: flex;
 		justify-content: space-between;
+		margin-bottom: 1rem;
 		@media (max-width: 750px){
 			width: 100%;
 		}
 		@media (max-width: 450px){
 			width: 100%;
-			flex-direction: column;
-			margin-bottom: 1rem;
+			/* flex-direction: column; */
+			
 		}
 		a {
 			font-size: 1.6rem;
@@ -208,7 +209,7 @@ const Container = styled(motion.div)`
     display: flex;
 	flex-direction: column;
     border-radius: 1rem;
-    max-width: 410px;
+    max-width: 100%;
 	min-width: 280px;
 	background-color: white;
 	border: 1px solid lightgray; 
@@ -220,6 +221,9 @@ const Container = styled(motion.div)`
 	  padding: 2rem 2rem;
 	  border-top-right-radius: 1rem;
 	  border-top-left-radius: 1rem;
+	  @media (max-width: 600px){
+		  padding: 1rem 1rem;
+	  }
 	  h1 {
 		  color: white;
 		  font-size: 1.4rem;
@@ -232,6 +236,9 @@ const Container = styled(motion.div)`
 	  display: flex;
 	  flex-direction: column;
 	  padding: 1rem 2rem;
+	  @media (max-width: 600px){
+		  padding: 0.5rem 1rem;
+	  }
 	  small {
 		  color: red;
 	  }
