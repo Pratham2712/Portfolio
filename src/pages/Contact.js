@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import styled from 'styled-components';
 import { pageAnimation, sliderContainer, slider, formAnim } from '../Animation';
@@ -7,6 +7,8 @@ import emailjs from 'emailjs-com';
 import ScrollTop from '../ScrollTop';
 
 const Contact = () => {
+	const [ notify, setNotify ] = useState(false);
+
 	function showerror(input, message) {
 		const border = input.parentElement;
 		border.className = 'form-common error';
@@ -62,6 +64,11 @@ const Contact = () => {
 				}
 			);
 			e.target.reset();
+
+			setNotify(true);
+			setTimeout(() => {
+				setNotify(false);
+			}, 1500);
 		}
 	}
 
@@ -113,6 +120,7 @@ const Contact = () => {
 						<button>send</button>
 					</form>
 				</Container>
+				{notify ? <Notify>Message send successfully</Notify> : ''}
 			</SectionBack>
 			<ScrollTop />
 		</StyledMain>
@@ -270,5 +278,14 @@ const Container = styled(motion.div)`
 		}
 	}
 	`;
+
+const Notify = styled.div`
+	background-color: grey;
+	color: white;
+	position: absolute;
+	padding: 0.4rem 0.4rem;
+	bottom: 7rem;
+	border-radius: 0.3rem;
+`;
 
 export default Contact;
