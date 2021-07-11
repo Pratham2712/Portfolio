@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { useLocation, Link } from 'react-router-dom';
@@ -7,6 +7,23 @@ const Navbar = () => {
 	const [ toggle, setToggle ] = useState(false);
 	const { pathname } = useLocation();
 
+	const clear = () => {
+		const back = document.querySelector('.back');
+		document.addEventListener('click', function(event) {
+			if (event.target === back) {
+				setToggle(false);
+			}
+		});
+	};
+
+	useEffect(() => {
+		const back = document.querySelector('.back');
+		document.addEventListener('click', function(event) {
+			if (event.target === back) {
+				setToggle(false);
+			}
+		});
+	}, []);
 	return (
 		<div>
 			<StyledNav>
@@ -22,6 +39,7 @@ const Navbar = () => {
 					style={{
 						transform: toggle ? 'translateX(0%)' : ''
 					}}
+					className="back"
 				>
 					<li>
 						<Link to="/" onClick={() => setToggle(false)}>

@@ -7,6 +7,8 @@ import { titleAnim, pageAnimation, fade } from '../Animation';
 
 import Skills from '../components/Skills';
 
+import { Link } from 'react-router-dom';
+
 const Home = () => {
 	return (
 		<Main variants={pageAnimation} initial="hidden" animate="show" exit="exit" style={{ backgroundColor: '#fff' }}>
@@ -24,9 +26,11 @@ const Home = () => {
 							</motion.h1>
 						</Hide>
 					</div>
-					<motion.button variants={fade} initial="hidden" animate="show">
-						Get in touch
-					</motion.button>
+					<Link to="/Contact">
+						<motion.button variants={fade} initial="hidden" animate="show">
+							Get in touch
+						</motion.button>
+					</Link>
 				</Text>
 				<Svg />
 			</StyledSection>
