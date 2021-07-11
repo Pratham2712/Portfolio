@@ -25,9 +25,30 @@ const Contact = () => {
 
 	const checkUsername = (input) => {
 		if (input.value === '') {
-			showerror(input, 'username is required*');
+			showerror(input, 'name is required*');
 		} else {
 			showsucess(input);
+
+			return true;
+		}
+	};
+	const checkEmail = (input) => {
+		const reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+		if (input.value === '') {
+			showerror(input, 'email is required*');
+		} else if (reg.test(input.value.trim()) == false) {
+			showerror(input, 'Email is invalid');
+		} else {
+			showsucess(input);
+			return true;
+		}
+	};
+	const checkMessage = (input) => {
+		if (input.value === '') {
+			showerror(input, 'message is required*');
+		} else {
+			showsucess(input);
+			return true;
 		}
 	};
 
@@ -36,25 +57,23 @@ const Contact = () => {
 			showerror(input, 'subject is required*');
 		} else {
 			showsucess(input);
+			return true;
 		}
 	};
 
 	function sendEmail(e) {
 		e.preventDefault();
 		const username = document.querySelector('.username');
+		const email = document.querySelector('.email');
 		const subject = document.querySelector('.subject');
 		const message = document.querySelector('.message');
 
 		checkUsername(username);
+		checkEmail(email);
 		checkSubject(subject);
-		if (message.value === '') {
-			showerror(message, 'message is required*');
-		} else if (subject.value === '') {
-			showerror(subject, 'subject is required*');
-		} else if (username.value === '') {
-			showerror(username, 'username is required*');
-		} else {
-			showsucess(message);
+		checkMessage(message);
+
+		if (checkUsername(username) && checkEmail(email) && checkSubject(subject) && checkMessage(message)) {
 			emailjs.sendForm('service_ycok5t9', 'template_nyix8c6', e.target, 'user_qt0fEolG4MNAUZOK9QL5X').then(
 				(result) => {
 					console.log(result.text);
@@ -105,6 +124,11 @@ const Contact = () => {
 						<div className="form-common">
 							<label>Name</label>
 							<input className="username" type="text" name="from_name" />
+							<small />
+						</div>
+						<div className="form-common">
+							<label>Email</label>
+							<input className="email" type="text" name="from_email" />
 							<small />
 						</div>
 						<div className="form-common">
