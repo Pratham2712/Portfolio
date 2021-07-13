@@ -6,6 +6,7 @@ import styled from 'styled-components';
 import { titleAnim, pageAnimation, fade } from '../Animation';
 
 import Skills from '../components/Skills';
+import Projects from '../components/Project';
 
 import { Link } from 'react-router-dom';
 
@@ -35,6 +36,7 @@ const Home = () => {
 				<Svg />
 			</StyledSection>
 			<Skills />
+			<Projects />
 		</Main>
 	);
 };

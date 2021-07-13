@@ -25,7 +25,7 @@ const Contact = () => {
 
 	const checkUsername = (input) => {
 		if (input.value === '') {
-			showerror(input, 'name is required*');
+			showerror(input, 'Name is required*');
 		} else {
 			showsucess(input);
 
@@ -35,7 +35,7 @@ const Contact = () => {
 	const checkEmail = (input) => {
 		const reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
 		if (input.value === '') {
-			showerror(input, 'email is required*');
+			showerror(input, 'Email is required*');
 		} else if (reg.test(input.value.trim()) == false) {
 			showerror(input, 'Email is invalid');
 		} else {
@@ -45,7 +45,7 @@ const Contact = () => {
 	};
 	const checkMessage = (input) => {
 		if (input.value === '') {
-			showerror(input, 'message is required*');
+			showerror(input, 'Message is required*');
 		} else {
 			showsucess(input);
 			return true;
@@ -54,7 +54,7 @@ const Contact = () => {
 
 	const checkSubject = (input) => {
 		if (input.value === '') {
-			showerror(input, 'subject is required*');
+			showerror(input, 'Subject is required*');
 		} else {
 			showsucess(input);
 			return true;

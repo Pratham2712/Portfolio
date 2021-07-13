@@ -20,6 +20,7 @@ const GlobalStyles = createGlobalStyle`
         width: 100%;
         overflow-x: hidden;
         background: #1b1b1b;
+        height: 100%;
     }`;
 
 export default GlobalStyles;
