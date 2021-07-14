@@ -24,6 +24,14 @@ const Navbar = () => {
 			}
 		});
 	}, []);
+
+	const viewProject = () => {
+		/* 	Ref.current.scrollIntoView({ behavior: 'smooth' }); */
+		/* Ref = { Ref }; */
+		/* document.getElementById('project').scrollIntoView(); */
+
+		setToggle(false);
+	};
 	return (
 		<div>
 			<StyledNav>
@@ -51,16 +59,16 @@ const Navbar = () => {
 							animate={{ width: pathname === '/' ? '50%' : '0%' }}
 						/>
 					</li>
-					<li>
-						<Link to="/Project" onClick={() => setToggle(false)}>
+					{/* <li>
+						<NavLink to="/path#hash" onClick={viewProject}>
 							Project
-						</Link>
+						</NavLink>
 						<Line
 							transition={{ duration: 0.5 }}
 							initial={{ width: '0%' }}
 							animate={{ width: pathname === '/Project' ? '50%' : '0%' }}
 						/>
-					</li>
+					</li> */}
 					<li>
 						<Link to="/Resume" onClick={() => setToggle(false)}>
 							Resume

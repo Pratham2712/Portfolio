@@ -122,6 +122,8 @@ const Parts = styled(motion.div)`
 		color: #282828;
 	}
 	
+
+	
 	
 	li {
 		list-style-type: none;
@@ -135,6 +137,7 @@ const Parts = styled(motion.div)`
 	}
 	@media (max-width: 1000px) {
 		width: 100%;
+		
 	}
 
 `;
