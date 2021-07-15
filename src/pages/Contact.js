@@ -293,7 +293,7 @@ const Container = styled(motion.div)`
 		  margin-top: 1rem;
 	  }
 	  button {
-		  padding: 0.4rem 0rem;
+		  padding: 0.3rem 0rem;
 		  cursor: pointer;
 		  font-weight: bold;
 		  font-size: 1rem;
@@ -302,6 +302,7 @@ const Container = styled(motion.div)`
 		  transition: all .5s ease;
 		  color: #00B0FF;
 		  width: 30%;
+		  text-transform: uppercase;
 		  &:hover {
 			  background-color: #00B0FF;
 			  color: white;

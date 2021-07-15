@@ -125,7 +125,7 @@ const Text = styled(motion.div)`
 
 	button {
     font-weight: bold;
-    font-size: 1.1rem;
+    font-size: 1rem;
     cursor: pointer;
     padding: 1rem 2rem;
     border: 3px solid #00B0FF;
@@ -133,6 +133,7 @@ const Text = styled(motion.div)`
 	margin-top: 1.7rem;
     transition: all .5s ease;
     font-family: 'Inter',sans-serif;
+	text-transform: uppercase;
     &:hover {
         background-color: #00B0FF;
         color: white;

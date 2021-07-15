@@ -54,7 +54,9 @@ const Project = () => {
 						</ul>
 
 						<a href="https://github.com/Pratham2712/News-Project" target="_blank">
-							<i class="fab fa-github" />
+							<button>
+								<i class="fas fa-code" /> code
+							</button>
 						</a>
 					</div>
 				</Flex>
@@ -78,8 +80,8 @@ const StyledSection = styled.div`
 	}
 	.head {
 		margin-bottom: 2rem;
-		font-size: 1.7rem;
-		background-color: black;
+		font-size: 1.4rem;
+		background-color: #1b1b1b;
 		color: white;
 		display: inline-block;
 		border-radius: 0.5rem;
@@ -121,7 +123,7 @@ const Images = styled.div`
 		}
 		max-width: 100%;
 		max-height: 100%;
-		border-radius: 1rem;
+		border-radius: 0.3rem;
 		box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
 		object-fit: contain;
 	}
@@ -165,15 +167,12 @@ const Flex = styled.div`
 			padding-bottom: 0.5rem;
 		}
 	}
-	i {
-		font-size: 2.5rem;
-		cursor: pointer;
-		padding-top: 0.5rem;
-	}
+
 	ul {
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: flex-end;
+		margin-top: 1.3rem;
 		@media (max-width: 1024px) {
 			justify-content: flex-start;
 		}
@@ -203,6 +202,22 @@ const Flex = styled.div`
 	}
 	a {
 		color: black;
+		button {
+			font-size: 1rem;
+			padding: 0.4rem 0.4rem;
+			cursor: pointer;
+			background: none;
+			border: 2px solid #ff29f6;
+			color: black;
+			font-weight: bold;
+			transition: all .5s ease;
+			margin-top: 1.3rem;
+			text-transform: uppercase;
+			&:hover {
+				background-color: #ff29f6;
+				color: white;
+			}
+		}
 	}
 `;
 
@@ -212,6 +227,9 @@ const ContentImage = styled.div`
 	align-items: center;
 	@media (max-width: 1024px) {
 		margin-bottom: 1rem;
+	}
+	i {
+		color: #1b1b1b;
 	}
 `;
 
