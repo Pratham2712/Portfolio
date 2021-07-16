@@ -25,25 +25,28 @@ const Project = () => {
 			<Fade left cascade>
 				<Line />
 			</Fade>
-			<Zoom clear cascade>
-				<div className="head">1. News Api Voice Search </div>
+			<Fade bottom big>
+				<div className="head">1. News Voice Search Site </div>
 				<Flex>
 					<ContentImage>
 						<i class="fas fa-arrow-alt-circle-left left-arrow" onClick={previous} />
 						<Images>
 							{newsApiImage.map((data, index) => (
 								<div className={index === current ? 'slide active' : 'slide'} key={index}>
-									<LazyLoad effect="blur">{index === current && <img src={data} alt="" />}</LazyLoad>
+									<LazyLoad effect="blur">
+										{index === current && <img src={data} alt="Project Image" />}
+									</LazyLoad>
 								</div>
 							))}
 						</Images>
 						<i class="fas fa-arrow-alt-circle-right right-arrow" onClick={next} />
 					</ContentImage>
+
 					<div className="text">
 						<h3>Created using Reactjs, Redux etc.</h3>
 						<h3>News Api Voice Search is based on newsapi.org JSON API.</h3>
 						<h3>Search with your voice and search by category.</h3>
-						<h3>Its displays title, release date, source and provide link to the website</h3>
+						<h3>Its displays title, release date, source and provide link to the website.</h3>
 						<ul>
 							<li>react</li>
 							<li>redux</li>
@@ -60,7 +63,7 @@ const Project = () => {
 						</a>
 					</div>
 				</Flex>
-			</Zoom>
+			</Fade>
 		</StyledSection>
 	);
 };
@@ -145,6 +148,7 @@ const Flex = styled.div`
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	overflow: hidden;
 	padding: 0rem 0rem;
 	@media (max-width: 1024px) {
 		padding: 0rem 0rem;
@@ -172,7 +176,7 @@ const Flex = styled.div`
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: flex-end;
-		margin-top: 1.3rem;
+		margin-top: 0.8rem;
 		@media (max-width: 1024px) {
 			justify-content: flex-start;
 		}

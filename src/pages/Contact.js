@@ -5,6 +5,7 @@ import { pageAnimation, sliderContainer, slider, formAnim } from '../Animation';
 //Emailjs
 import emailjs from 'emailjs-com';
 import ScrollTop from '../ScrollTop';
+import Fade from 'react-reveal/Fade';
 
 const Contact = () => {
 	const [ notify, setNotify ] = useState(false);
@@ -52,28 +53,28 @@ const Contact = () => {
 		}
 	};
 
-	const checkSubject = (input) => {
+	/* const checkSubject = (input) => {
 		if (input.value === '') {
 			showerror(input, 'Subject is required*');
 		} else {
 			showsucess(input);
 			return true;
 		}
-	};
+	}; */
 
 	function sendEmail(e) {
 		e.preventDefault();
 		const username = document.querySelector('.username');
 		const email = document.querySelector('.email');
-		const subject = document.querySelector('.subject');
+		/* const subject = document.querySelector('.subject'); */
 		const message = document.querySelector('.message');
 
 		checkUsername(username);
 		checkEmail(email);
-		checkSubject(subject);
+		/* checkSubject(subject); */
 		checkMessage(message);
 
-		if (checkUsername(username) && checkEmail(email) && checkSubject(subject) && checkMessage(message)) {
+		if (checkUsername(username) && checkEmail(email) && checkMessage(message)) {
 			emailjs.sendForm('service_ycok5t9', 'template_nyix8c6', e.target, 'user_qt0fEolG4MNAUZOK9QL5X').then(
 				(result) => {
 					console.log(result.text);
@@ -124,21 +125,20 @@ const Contact = () => {
 						<div className="form-common">
 							<label>Name</label>
 							<input className="username" type="text" name="from_name" />
+
 							<small />
 						</div>
 						<div className="form-common">
 							<label>Email</label>
 							<input className="email" type="text" name="from_email" />
+
 							<small />
 						</div>
-						<div className="form-common">
-							<label>Subject</label>
-							<input className="subject" type="text" name="from_subject" />
-							<small />
-						</div>
+
 						<div className="form-common">
 							<label>Message</label>
-							<textarea className="message" name="message" />
+							<textarea className="message" name="message" rows="5" />
+
 							<small />
 						</div>
 						<button>send</button>
@@ -186,7 +186,7 @@ color: #1da1f2;
 		h1 {
 			color: #FF29F6;
 			font-weight: bold;
-			font-size: 1.6rem;
+			font-size: 1.7rem;
 		}
 	}
 `;
@@ -265,13 +265,15 @@ const Container = styled(motion.div)`
 	  }
 	  small {
 		  color: red;
+		  /* margin-bottom: 0.5rem; */
 	  }
 	  .form-common {
 		  display: flex;
 		  flex-direction: column;
 		  label {
 			  padding-top: 1rem;
-			  color: #00B0FF
+			  color: #00B0FF;
+			  margin-bottom: 0.3rem;
 			}
 
 			input {
@@ -297,14 +299,15 @@ const Container = styled(motion.div)`
 		  cursor: pointer;
 		  font-weight: bold;
 		  font-size: 1rem;
-		  border: 2px solid #00B0FF;
-		  background: transparent;
+		  background: #00B0FF;
 		  transition: all .5s ease;
-		  color: #00B0FF;
-		  width: 30%;
+		  color: white;
+		  width: 100%;
 		  text-transform: uppercase;
+		  letter-spacing: 3px;
+          border: none;
 		  &:hover {
-			  background-color: #00B0FF;
+			  background-color: #FF29F6;
 			  color: white;
 			}
 		}
