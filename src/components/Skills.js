@@ -1,13 +1,16 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { motion } from 'framer-motion';
 import styled from 'styled-components';
 import Zoom from 'react-reveal/Zoom';
 import Fade from 'react-reveal/Fade';
 
 const Skills = () => {
+	const ref = useRef(null);
+	const section = useRef(null);
 	return (
-		<StyledSection>
+		<StyledSection className="section2" ref={section}>
 			<motion.h1>Skills</motion.h1>
+
 			<Fade left cascade>
 				<Line />
 			</Fade>

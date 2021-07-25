@@ -7,38 +7,48 @@ import { titleAnim, pageAnimation, fade } from '../Animation';
 
 import Skills from '../components/Skills';
 import Projects from '../components/Project';
+import Footer from '../components/Footer';
 
 import { Link } from 'react-router-dom';
 
 const Home = () => {
 	return (
-		<Main variants={pageAnimation} initial="hidden" animate="show" exit="exit" style={{ backgroundColor: '#fff' }}>
-			<StyledSection>
-				<Text>
-					<Hide>
-						<motion.h1 variants={titleAnim} initial="hidden" animate="show">
-							I'm <span>Pratham Vaishya</span>
-						</motion.h1>
-					</Hide>
-					<div className="subtext">
+		<div>
+			<Main
+				variants={pageAnimation}
+				initial="hidden"
+				animate="show"
+				exit="exit"
+				style={{ backgroundColor: '#fff' }}
+			>
+				<StyledSection>
+					<Text>
 						<Hide>
 							<motion.h1 variants={titleAnim} initial="hidden" animate="show">
-								I build things for the web
+								I'm <span>Pratham Vaishya</span>
 							</motion.h1>
 						</Hide>
-					</div>
-					<Link to="/Contact">
-						<motion.button variants={fade} initial="hidden" animate="show">
-							Get in touch
-						</motion.button>
-					</Link>
-				</Text>
-				<Svg />
-			</StyledSection>
-			<Skills />
+						<div className="subtext">
+							<Hide>
+								<motion.h1 variants={titleAnim} initial="hidden" animate="show">
+									I build things for the web
+								</motion.h1>
+							</Hide>
+						</div>
+						<Link to="/Contact">
+							<motion.button variants={fade} initial="hidden" animate="show">
+								Get in touch
+							</motion.button>
+						</Link>
+					</Text>
+					<Svg />
+				</StyledSection>
+				<Skills />
 
-			<Projects />
-		</Main>
+				<Projects />
+			</Main>
+			<Footer />
+		</div>
 	);
 };
 

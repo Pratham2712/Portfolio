@@ -107,9 +107,8 @@ const Contact = () => {
 						<a href="#">
 							<i class="fab fa-facebook" />
 						</a>
-						<a href="https://github.com/Pratham2712" target="_blank">
-							<i class="fab fa-github" />
-						</a>
+						<a href="http://api.whatsapp.com/send?phone=919653111799" target="_blank">
+<i class="fab fa-whatsapp-square"></i>						</a>
 						<a href="https://www.linkedin.com/in/pratham-vaishya-b40b49212/" target="_blank">
 							<i class="fab fa-linkedin" />
 						</a>
@@ -172,13 +171,14 @@ const SectionBack = styled(motion.section)`
 		a {
 			font-size: 1.6rem;
 	        padding: 0px 15px;
-			
+			text-decoration: none;
 		}
 	a:nth-child(1) {
 color: #4267b2;
 }
 a:nth-child(2) {
-color: black;
+color: #27D246;
+font-size: 1.7rem;
 }
 a:nth-child(3) {
 color: #1da1f2;
@@ -186,7 +186,7 @@ color: #1da1f2;
 		h1 {
 			color: #FF29F6;
 			font-weight: bold;
-			font-size: 1.7rem;
+			font-size: 1.6rem;
 		}
 	}
 `;

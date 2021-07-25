@@ -21,7 +21,9 @@ const Project = () => {
 
 	return (
 		<StyledSection>
-			<h1>Projects</h1>
+			<div style={{ display: 'flex' }}>
+				<h1>Projects</h1>
+			</div>
 			<Fade left cascade>
 				<Line />
 			</Fade>
@@ -97,6 +99,9 @@ const StyledSection = styled.div`
 			margin-bottom: 1rem;
 		}
 	}
+	.car {
+		display: inline;
+	}
 `;
 
 const Line = styled.div`
@@ -150,6 +155,7 @@ const Flex = styled.div`
 	align-items: center;
 	overflow: hidden;
 	padding: 0rem 0rem;
+
 	@media (max-width: 1024px) {
 		padding: 0rem 0rem;
 		flex-direction: column;
