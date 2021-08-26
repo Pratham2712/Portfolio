@@ -1,9 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import news1 from '../images/NewsApi -1.png';
 import news2 from '../images/NewsApi -2.png';
 import news3 from '../images/NewsApi -3.png';
-import Zoom from 'react-reveal/Zoom';
 import Fade from 'react-reveal/Fade';
 import LazyLoad from 'react-lazyload';
 
@@ -73,7 +72,6 @@ const Project = () => {
 const StyledSection = styled.div`
 	padding-bottom: 5rem;
 	min-height: 50vh;
-
 	h1 {
 		padding-bottom: 1rem;
 		font-weight: bold;
@@ -115,11 +113,9 @@ const Images = styled.div`
 	user-select: none;
 	justify-content: center;
 	align-items: center;
-
 	@media (max-width: 1000px) {
 		padding: 0rem 0rem;
 	}
-
 	div {
 	}
 	img {
@@ -135,13 +131,11 @@ const Images = styled.div`
 		box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
 		object-fit: contain;
 	}
-
 	.slide {
 		opacity: 0;
 		transition-duration: 1s ease;
 		scale: 0.5;
 	}
-
 	.slide.active {
 		opacity: 1;
 		scale: 1;
@@ -155,12 +149,10 @@ const Flex = styled.div`
 	align-items: center;
 	overflow: hidden;
 	padding: 0rem 0rem;
-
 	@media (max-width: 1024px) {
 		padding: 0rem 0rem;
 		flex-direction: column;
 	}
-
 	.text {
 		text-align: right;
 		padding-left: 1rem;
@@ -177,7 +169,6 @@ const Flex = styled.div`
 			padding-bottom: 0.5rem;
 		}
 	}
-
 	ul {
 		display: flex;
 		flex-wrap: wrap;
@@ -186,11 +177,9 @@ const Flex = styled.div`
 		@media (max-width: 1024px) {
 			justify-content: flex-start;
 		}
-
 		li {
 			list-style-type: none;
 			margin-left: 0.3rem;
-
 			margin-bottom: 0.3rem;
 			background-color: #008dcc;
 			width: fit-content;
@@ -199,7 +188,6 @@ const Flex = styled.div`
 			color: white;
 		}
 	}
-
 	.right-arrow {
 		cursor: pointer;
 		z-index: 10;
